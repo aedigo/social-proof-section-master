@@ -1,0 +1,14 @@
+{
+  "name": "social-proof-section-master",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "yarn live-server --port=3333 --no-browser",
+    "sass": "sass --watch src/sass/main.scss public/css/layout.css"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.26.11"
+  }
+}

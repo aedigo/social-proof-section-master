@@ -1,0 +1,248 @@
+@use 'base';
+
+body {
+  background-color: hsl(300, 24%, 96%);
+  display: grid;
+  font-family: 'Spartan', sans-serif;
+  grid-template-columns: 350px;
+  justify-content: center;
+  grid-template-rows: 1fr auto;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 1200px;
+}
+
+#header {
+  .welcome {
+    padding: 80px 20px 40px 20px;
+    text-align: center;
+    &__primary-text {
+      @include base.font(28px, 700, base.$primary_color, 0.8);
+
+      margin-bottom: 28px;
+      padding: 0 40px;
+    }
+
+    &__secondary-text {
+      @include base.font(13px, 400, #444, none);
+
+      opacity: 0.9;
+    }
+  }
+}
+
+#section {
+  .review {
+    display: grid;
+    padding: 0 20px;
+    row-gap: 1rem;
+    &__stars {
+      background-color: hsla(303, 10%, 53%, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+
+      &__rate {
+        @include base.font(12px, 700, base.$primary_color, none);
+      }
+    }
+  }
+}
+
+#section-opinion {
+  margin-top: 40px;
+  .review {
+    display: grid;
+    padding: 0 20px;
+    row-gap: 1rem;
+
+    &__author {
+      background-color: base.$primary_color;
+      border-radius: 10px;
+      padding: 30px;
+
+      &__profile {
+        display: grid;
+        font-size: 13px;
+        grid-template-columns: 60px 3fr;
+
+        &__picture {
+          border-radius: 50%;
+          height: 40px;
+          grid-row: 1 / 3;
+        }
+
+        &__name {
+          @include base.font(none, 700, hsl(0, 0%, 100%), none);
+        }
+
+        &__status {
+          @include base.font(none, 400, base.$secondary_color, none);
+
+          align-self: end;
+          grid-column: 2/4;
+        }
+      }
+
+      &__message {
+        @include base.font(12px, 400, hsl(0, 0%, 100%), none);
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+#footer {
+  .attribution {
+    @include base.font(14px, 500, #444, none);
+
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 350px) {
+  body {
+    grid-template-columns: auto;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  body {
+    grid-template-columns: 340px 340px;
+    padding: 80px;
+  }
+
+  #header {
+    padding: 10px 20px;
+    .welcome {
+      text-align: left;
+      padding: 0;
+
+      &__primary-text {
+        font-size: 32px;
+        margin-bottom: 10px;
+        padding: 0;
+      }
+
+      &__secondary-text {
+        font-size: 12px;
+      }
+    }
+  }
+
+  #section {
+    place-self: center;
+    width: 100%;
+
+    .review {
+      padding: 0 0 0 20px;
+      row-gap: 10px;
+    }
+  }
+
+  #section-opinion {
+    grid-column: 1/3;
+    margin-top: 40px;
+
+    .review {
+      grid-template-columns: 320px 320px;
+      column-gap: 20px;
+    }
+  }
+  #footer {
+    grid-column: 1 / 4;
+    margin-top: 50px;
+    .attribution {
+    }
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  body {
+    grid-template-columns: auto;
+    padding: 80px;
+  }
+
+  #header {
+    padding: 10px 20px;
+    .welcome {
+      text-align: left;
+      padding: 0;
+
+      &__primary-text {
+        font-size: 48px;
+        margin-bottom: 20px;
+        padding: 0;
+        width: 80%;
+      }
+
+      &__secondary-text {
+        font-size: 14px;
+        width: 85%;
+      }
+    }
+  }
+
+  #section {
+    .review {
+      &__stars {
+        align-items: center;
+        display: flex;
+
+        &-1 {
+          position: relative;
+          right: 90px;
+        }
+
+        &-2 {
+          position: relative;
+          right: 60px;
+        }
+
+        &__icons,
+        &__rate {
+          padding: 5px 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  #section-opinion {
+    grid-column: 1/3;
+    margin-top: 70px;
+
+    .review {
+      column-gap: 20px;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto;
+
+      &__author {
+        padding: 40px;
+
+        &__message {
+          font-size: 13px;
+          margin-top: 30px;
+        }
+
+        &-2 {
+          position: relative;
+          top: 20px;
+        }
+
+        &-3 {
+          position: relative;
+          top: 40px;
+        }
+      }
+    }
+  }
+
+  #footer {
+    grid-column: 1 / 4;
+    margin-top: 50px;
+    .attribution {
+    }
+  }
+}

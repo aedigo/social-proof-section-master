@@ -1,0 +1,20 @@
+@use 'reset';
+
+// Variables
+$primary_color: hsl(300, 43%, 22%);
+$secondary_color: hsl(333, 80%, 67%);
+
+@mixin font($fz, $fw, $clr, $lh) {
+  @if $fz != none {
+    font-size: $fz;
+  }
+  @if $fw != none {
+    font-weight: $fw;
+  }
+  @if $clr != none {
+    color: $clr;
+  }
+  @if $lh != none {
+    line-height: $lh;
+  }
+}
