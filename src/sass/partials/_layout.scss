@@ -148,7 +148,8 @@ body {
     .review {
       grid-template-columns: 320px 320px;
       column-gap: 20px;
-    }
+      grid-template-rows: 220px 220px; 
+   }
   }
   #footer {
     grid-column: 1 / 4;
